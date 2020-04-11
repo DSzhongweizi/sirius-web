@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结果</title>
+    <link rel="stylesheet" type="text/css" href="https://rawcdn.githack.com/DSzhongweizi/sirius-web/1227c6887437760ba724ec9b28831e3c828e0e01/result.css"/>
+</head>
+<body>
+    <div>
+        <h1>识别结果</h1>
+        <table>
+            <tr>
+                <th>公司ID</th>
+                <th>是否是僵尸公司</th>
+            </tr>
+            {% for item in result %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    {% if item[1]==0 %}
+                        <td>否</td>
+                    {% else %}
+                        <td>是</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
